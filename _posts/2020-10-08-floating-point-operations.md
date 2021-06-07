@@ -6,7 +6,7 @@ gh-repo: peter25316
 gh-badge: [follow]
 ---
 
-## Is it possible that floating point operation lose all correct digits?
+## Is it possible for these errors to accumulate enough to significantly reduce the accuracy of solutions of systems of linear equations Ax = b. Worst case: Is it possible to lose all correct digits?
 
 **Goal:**
 - Check that the backward error of your answer is near machine epsilon, by multiplying _A_ times the output solution _x_ and comparing with your chosen _b_.
