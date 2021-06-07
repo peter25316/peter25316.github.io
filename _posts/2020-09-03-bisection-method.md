@@ -11,6 +11,7 @@ According to given information, each of the functions has exactly one root betwe
 **(A) f(x) = (432x4 + 72x2 + 16x + 1)e − 8e6x**
           
 | INTERVALS | ROOTS |
+|:--- | :--- |
 |[-1, 1]   | -0.183513|
 |[-0.5, 1]        | -0.183516 |
 |[-0.5, 0]        | -0.183513|
