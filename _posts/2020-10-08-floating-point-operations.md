@@ -293,7 +293,7 @@ ans = 4.549076021914460e+08
 
 - For A1 and A3, n can be as large as 18 and still get at least one correct significant digit for the solution. A2 on the other hand, n can be only as large as 12 to get a good solution.
 
-MATLAB Code:
+**MATLAB Code:**
 
 Gauss elimination:
 ```
