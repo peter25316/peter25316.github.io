@@ -287,9 +287,9 @@ EMF = 6.211373804908112e+07
 ans = 4.549076021914460e+08
 ```
 **Conclusion:**
-- Out of 9 matrics, 8 of them could be solved with at least some correct digits except for matrix A2 when n = 18. A2, when n = 18 was a total failure with 0 correct significant digits because of the result of its RFE, is ≈ 23 which is way larger than 0.5*10-1.
+- Out of 9 matrics, 8 of them could be solved with at least some correct digits except for matrix A2 when n = 18. A2, when n = 18 was a total failure with 0 correct significant digits because of the result of its RFE, is ≈ 23 which is way larger than 0.5e-1.
 
-- Ranking from easiest to solve to hardest: A1 > A3 > A2. A1 has 13 correct digits when n = 6, 13 when n = 12, 12 when n =18. For A2, it has 9 correct digits when n = 6, 3 when n = 12, 0 when n = 18. For A3, it has 13 correct digits when n = 6, 10 when n = 12, 8 when n =18.
+- Ranking from easiest to solve to hardest: A1 > A3 > A2. A1 has 13 correct digits when n = 6, 13 when n = 12, 12 when n =18. For A2, it has 9 correct digits when n = 6, 3 when n = 12, 0 when n = 18. For A3, it has 13 correct digits when n = 6, 10 when n = 12, 8 when n = 18.
 
 - For A1 and A3, n can be as large as 18 and still get at least one correct significant digit for the solution. A2 on the other hand, n can be only as large as 12 to get a good solution.
 
