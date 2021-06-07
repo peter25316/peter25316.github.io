@@ -22,6 +22,7 @@ gh-badge: [follow]
 
 
 MATLAB session:
+
 n = 6:
 ```
 >> geExample1
@@ -112,6 +113,7 @@ ans = 57.582507993251738
 |18|22.666835057243510|3.610195135568162e-15|6.278562295407966e+15|2.663035149379290e+17|
 
 MATLAB session:
+
 n = 6:
 ```
 >> geExample1
@@ -192,4 +194,141 @@ RCOND =  3.177575e-18.
 > In cond (line 46)
 
 ans = 2.663035149379290e+17
+```
+
+**A3(i, j) = (i + sin(i + j))/(j + cos(i + j) + 1)**
+
+|Size|RFE|RBE|EMF|Condition Number|
+| --- | --- | --- | --- |
+|6|4.485301019485632e-14|1.815908059128617e-16|2.470004467978380e+2|8.829339368344521e+2|
+|12|2.722400083143839e-11|1.382817318709002e-16|1.968734442583834e+5|1.852023667474059e+6|
+|18|9.979205684018666e-9|1.606602017114681e-16|6.211373804908112e+7|4.549076021914460e+8|
+
+
+
+MATLAB session:
+
+n = 6:
+```
+>> geExample1
+x = 1.000000000000004
+    1.000000000000000
+    1.000000000000012
+    0.999999999999973
+    1.000000000000044
+    0.999999999999955
+
+RFE = 4.485301019485632e-14
+
+RBE = 1.815908059128617e-16
+
+EMF = 2.470004467978380e+02
+
+>> cond(aorig, inf)
+
+ans = 8.829339368344521e+02
+```
+n = 12:
+```
+>> geExample1
+x = 0.999999999999857
+    0.999999999999312
+    0.999999999998766
+    0.999999999997140
+    0.999999999999233
+    0.999999999990177
+    0.999999999999798
+    1.000000000003360
+    0.999999999998826
+    1.000000000015110
+    0.999999999988805
+    1.000000000027224
+
+RFE = 2.722400083143839e-11
+
+RBE = 1.382817318709002e-16
+
+EMF = 1.968734442583834e+05
+
+>> cond(aorig, inf)
+
+ans = 1.852023667474059e+06
+```
+n = 18:
+```
+>> geExample1
+x = 1.000000000000294
+    0.999999999997227
+    0.999999999993184
+    0.999999999895639
+    0.999999999500146
+    0.999999998484185
+    0.999999996688847
+    0.999999995948169
+    0.999999994349681
+    0.999999993816509
+    0.999999994028179
+    0.999999997073929
+    1.000000006084601
+    1.000000006215319
+    1.000000008930692
+    1.000000009712359
+    1.000000009979206
+    1.000000009809144
+
+RFE = 9.979205684018666e-09
+
+RBE = 1.606602017114681e-16
+
+EMF = 6.211373804908112e+07
+
+>> cond(aorig, inf)
+
+ans = 4.549076021914460e+08
+```
+**Conclusion:**
+- Out of 9 matrics, 8 of them could be solved with at least some correct digits except for matrix A2 when n = 18. A2, when n = 18 was a total failure with 0 correct significant digits because of the result of its RFE, is ≈ 23 which is way larger than 0.5*10-1.
+
+- Ranking from easiest to solve to hardest: A1 > A3 > A2. A1 has 13 correct digits when n = 6, 13 when n = 12, 12 when n =18. For A2, it has 9 correct digits when n = 6, 3 when n = 12, 0 when n = 18. For A3, it has 13 correct digits when n = 6, 10 when n = 12, 8 when n =18.
+
+- For A1 and A3, n can be as large as 18 and still get at least one correct significant digit for the solution. A2 on the other hand, n can be only as large as 12 to get a good solution.
+
+MATLAB Code:
+
+Gauss elimination:
+```
+%%%% ELIMINATION
+%n = 6;
+for i = 1:n - 1
+    for j = i + 1:n
+        m = a(j, i) / a(i,i);
+        for k = i:n
+            a(j, k) = a(j, k) - m * a(i, k);
+        end
+        b(j) = b(j) - m * b(i);
+    end
+end
+%%%% BACK-SUBSTITUTION
+x = zeros(n, 1);
+for i = n:-1:1
+    for j = i + 1:n
+        b(i) = b(i) - a(i, j) * x(j);
+    end
+    x(i) = b(i) / a(i, i);
+end
+x
+```
+examp1: where n is 6, 12 , and 18 and aorig is A1, A2,  and A3
+```
+n=18;
+aorig = zeros(n,n); 
+for i=1:n
+    for j=1:n
+        aorig(i,j) = (i + sin(i + j)) / ((i + j) + 1);
+    end 
+end
+c = ones(n, 1);
+borig = aorig * c;
+a = aorig; b = borig;
+gausselim
 ```
