@@ -15,7 +15,7 @@ What else do you need?
 
 ### My History
 
-Before I decided to switch my major from Electrical Engineering to Computer Science, whoever I talked to, when the conversation reach the topic of coding, they always said computer were cool and stuff until you started learning how they work. I thought that they were exagerrating and was I so right. One of the required class I had to take was Introduction to Programming and I fell in love with it. The idea of being able to create something and have it worked is always the most fascinating to me. The more I program the more I learn about how everything around me works. It is a great feeling to understand rather than to wonder (though wondering is great too because it motivates me to try to understand).
+Before I decided to switch my major from Electrical Engineering to Computer Science, whoever I talked to, whenever the conversation reach the topic of coding, they always said computer were cool and stuff until you started actually learning how they work. I thought that they were exagerrating and was I so right. One of the required class I had to take was Introduction to Programming. I wrote my first "Hello World" and it piqued my interest. The idea of being able to create something and have it worked is always the most fascinating to me. Then I started doing more problem solving and I got hooked. The more I program the more I learn about how everything around me works. It is a great feeling to understand rather than to wonder (though wondering is great too because it motivates me to try to understand).
 
 ## Skills
 - **Exposured Programming Languages:** JavaScript, Matlab.
