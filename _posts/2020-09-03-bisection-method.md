@@ -19,12 +19,6 @@ According to given information, each of the functions has exactly one root betwe
 |[-0.2, 0] | -0.183517 |
 |[-0.19, -0.17] | -0.183515 |
 
-| Number | Next number | Previous number |
-| :------ |:--- | :--- |
-| Five | Six | Four |
-| Ten | Eleven | Nine |
-| Seven | Eight | Six |
-| Two | Three | One |
-
 f(-0.183515) = -1.5009e-04 ~ 0
+
 After narrowing down the interval close to the approximated r. I am confident that the root is around -0.183515 since this is the root of the narrowest interval and when it is plugged in the function, the result is close to 0. Also, compared to other roots from outer intervals, only the last digit is different.
