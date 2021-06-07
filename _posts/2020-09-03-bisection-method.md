@@ -13,7 +13,7 @@ According to given information, each of the functions has exactly one root betwe
           
 | INTERVALS | ROOTS |
 |:--- | :--- |
-|[-1, 1] | -0.183513|
+|[-1, 1] | -0.183513 |
 |[-0.5, 1] | -0.183516 |
 |[-0.5, 0] | -0.183513 |
 |[-0.2, 0] | -0.183517 |
@@ -22,3 +22,19 @@ According to given information, each of the functions has exactly one root betwe
 f(-0.183515) = -1.5009e-04 ~ 0
 
 After narrowing down the interval close to the approximated r. I am confident that the root is around -0.183515 since this is the root of the narrowest interval and when it is plugged in the function, the result is close to 0. Also, compared to other roots from outer intervals, only the last digit is different.
+
+~~~
+>> f = @(x) (432*x^4 + 72*x^2 + 16*x + 1)*exp(1) - 8*exp(6*x);
+>> xc = bisect(f,-1,1,0.0000005)
+xc =  -0.183513641357422
+>> xc = bisect(f,-0.5,1,0.0000005)
+xc = -0.183516502380371
+>> xc = bisect(f,-0.5,0,0.0000005)
+xc =  -0.183513641357422
+>> xc = bisect(f,-0.2,0,0.0000005)
+xc =  -0.183517456054688
+>> xc = bisect(f,-0.19,0.17,0.0000005)
+xc =  -0.183515319824219
+>> f(-0.183515)
+ans = -1.5009e-04
+~~~
