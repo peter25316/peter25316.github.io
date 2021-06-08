@@ -4,6 +4,7 @@ title: Floating Point Operations
 subtitle: Numerical Analysis
 gh-repo: peter25316
 gh-badge: [follow]
+tags: [math]
 ---
 
 ## Is it possible for these errors to accumulate enough to significantly reduce the accuracy of solutions of systems of linear equations Ax = b. Worst case: Is it possible to lose all correct digits?
